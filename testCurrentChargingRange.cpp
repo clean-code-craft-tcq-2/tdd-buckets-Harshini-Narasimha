@@ -21,4 +21,18 @@ TEST_CASE("Output the number of readings where the current measurements have mul
   REQUIRE(getCurrentReadingsFromRanges(chargingCurrentSampleList) == expectedOutputRange);
 }
 
-  
+TEST_CASE("Get the Reading for list with single entry") {
+  std::map<std::string, int> expectedOutputRange = {{"7-7",1}};
+  REQUIRE(getRangeWithSingleReading(7) == expectedOutputRange);
+}
+
+TEST_CASE("Get the Reading for list with multiple entry") {
+  std::vector<int> chargingCurrentSampleList = {4,7,10};
+  std::map<std::string, int> expectedOutputRange = {{"4-4",1},{"7-7",1},{"10-10",1}};
+  REQUIRE(getCurrentReadingsFromRanges(chargingCurrentSampleList) == expectedOutputRange);
+}
+
+TEST_CASE("Format the range in lowerRange-uppperRange format") {
+  string expectedStringFormat ="7-10";
+  REQUIRE(formatCurrentRangeString(7,10) == expectedStringFormat);
+}
