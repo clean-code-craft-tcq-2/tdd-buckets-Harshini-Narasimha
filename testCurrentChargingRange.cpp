@@ -32,7 +32,12 @@ TEST_CASE("Get the Reading for list with multiple entry") {
   REQUIRE(getCurrentReadingsFromRanges(chargingCurrentSampleList) == expectedOutputRange);
 }
 
-TEST_CASE("Format the range in lowerRange-uppperRange format") {
+TEST_CASE("Format the range in lowerRange-upperRange format") {
   string expectedStringFormat ="7-10";
   REQUIRE(formatCurrentRangeString(7,10) == expectedStringFormat);
+}
+
+TEST_CASE("Check if given values are continuous") {
+  REQUIRE(isGivenReadingsContinous(7,10) == false);
+  REQUIRE(isGivenReadingsContinous(7,8) == true);
 }
