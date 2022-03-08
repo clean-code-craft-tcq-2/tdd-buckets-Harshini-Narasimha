@@ -5,6 +5,10 @@ string formatCurrentRangeString(int lowerRange, int upperRange) {
     return (to_string(lowerRange) + "-" + to_string(upperRange));
 }
 
+bool isGivenReadingsContinous(int lowerRange, int upperRange) {
+    return((upperRange - lowerRange) <= 1);
+}
+
 currentRangeListWithReadings getRangeWithSingleReading(int chargingCurrentValue)
 {
     currentRangeListWithReadings currentRangeList;
