@@ -9,15 +9,13 @@ bool isGivenReadingsContinous(int lowerRange, int upperRange) {
     return((upperRange - lowerRange) <= 1);
 }
 
-currentRangeListWithReadings getRangeWithSingleReading(int chargingCurrentValue)
-{
+currentRangeListWithReadings getRangeWithSingleReading(int chargingCurrentValue){
     currentRangeListWithReadings currentRangeList;
     currentRangeList.insert({formatCurrentRangeString(chargingCurrentValue,chargingCurrentValue),1});
     return currentRangeList;
 }
 
-currentRangeListWithReadings getRangeWithMultipleReading(chargingCurrentMeasurementList currentMeasurementList)
-{
+currentRangeListWithReadings getRangeWithMultipleReading(chargingCurrentMeasurementList currentMeasurementList){
     chargingCurrentMeasurementList continuousCurrentRangeList;
     currentRangeListWithReadings chargingCurrentReadingList;
     for(chargingCurrentMeasurementList::iterator rangeIterator = currentMeasurementList.begin(); rangeIterator != currentMeasurementList.end()-1; rangeIterator++) {
@@ -43,8 +41,7 @@ currentRangeListWithReadings getCurrentReadingsFromRanges(chargingCurrentMeasure
     }
     
     currentRangeListWithReadings chargingCurrentReadingList;
-    if(currentMeasurementList.size() != 0)
-    {
+    if(currentMeasurementList.size() != 0){
         chargingCurrentReadingList=getRangeWithMultipleReading(currentMeasurementList);
     }
     return chargingCurrentReadingList;
