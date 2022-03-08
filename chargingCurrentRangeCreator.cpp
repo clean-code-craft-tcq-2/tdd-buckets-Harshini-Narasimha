@@ -1,6 +1,10 @@
 #include <algorithm>
 #include "chargingCurrentRangeCreator.h"
 
+string formatCurrentRangeString(int lowerRange, int upperRange) {
+    return (to_string(lowerRange) + "-" + to_string(upperRange));
+}
+
 currentRangeListWithReadings getRangeWithSingleReading(int chargingCurrentValue)
 {
     currentRangeListWithReadings currentRangeList;
