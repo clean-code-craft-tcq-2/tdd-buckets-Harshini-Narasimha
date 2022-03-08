@@ -9,6 +9,12 @@ TEST_CASE("Output the number of readings where the current measurements have 2 c
   REQUIRE(getCurrentReadingsFromRanges(chargingCurrentSampleList) == expectedOutputRange);
 }
 
+TEST_CASE("Range list emoty when no reading available") {
+  std::vector<int> emptyChargingCurrentSampleList;
+  std::map<std::string, int> expectedEmptyOutputRange;
+  REQUIRE(getCurrentReadingsFromRanges(emptyChargingCurrentSampleList) == expectedEmptyOutputRange);
+}
+
 TEST_CASE("Output the number of readings where the current measurements have 1 current charging data") {
   std::vector<int> chargingCurrentSampleList = {4};
   std::map<std::string, int> expectedOutputRange = {{"4-4",1}};
