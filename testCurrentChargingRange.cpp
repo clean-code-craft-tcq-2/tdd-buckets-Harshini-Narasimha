@@ -3,7 +3,7 @@
 #include "test/catch.hpp"
 #include "chargingCurrentRangeCreator.h"
 
-TEST_CASE("Check input list validity") {
+TEST_CASE("Check input list validity where one of the data is invalid") {
   std::vector<int> chargingCurrentSampleList={1,2,-4,7,8};
   REQUIRE(isChargingCurrentMeasurementListValid(chargingCurrentSampleList)==false);
 }
