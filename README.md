@@ -64,7 +64,7 @@ Start Test-driven approach
 3. Return the string in csv format
 4. If the inputs are not valid then return 0
 
-##Test cases:
+## Test cases:
 
 1. Check whether the input list is Valid. Expected Results : should return true if all the values are positive integers. Else return false for invalid data.
 2. Check the formatting of the range in lowerRange-upperRange format. Expected result : Compare the Actual and expected result
