@@ -45,7 +45,7 @@ currentRangeListWithReadings getRangeWithMultipleReading(chargingCurrentMeasurem
 currentRangeListWithReadings getCurrentReadingsFromRanges(chargingCurrentMeasurementList & currentMeasurementList){
     currentRangeListWithReadings chargingCurrentReadingList;
     
-    if(isChargingCurrentMeasurementListValid(currentMeasurementList)){
+    if(!isChargingCurrentMeasurementListValid(currentMeasurementList)){
         return chargingCurrentReadingList;
     }
     sort(currentMeasurementList.begin(),currentMeasurementList.end());
