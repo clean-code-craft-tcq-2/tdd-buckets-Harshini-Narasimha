@@ -50,7 +50,7 @@ currentRangeListWithReadings getCurrentReadingsFromRanges(chargingCurrentMeasure
     if(currentMeasurementList.size() == 1) {
        return getRangeWithSingleReading(currentMeasurementList[0]);
     }
-        chargingCurrentReadingList=getRangeWithMultipleReading(currentMeasurementList);
+         return getRangeWithMultipleReading(currentMeasurementList);
     }
     return chargingCurrentReadingList;
 }
