@@ -7,8 +7,8 @@ bool isChargingCurrentMeasurementListValid(chargingCurrentMeasurementList curren
         {
             return false;
         }
-        return true;
     }
+   return true;
 }
 string formatCurrentRangeString(int lowerRange, int upperRange) {
     return (to_string(lowerRange) + "-" + to_string(upperRange));
