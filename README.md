@@ -51,3 +51,15 @@ Start Test-driven approach
 1. Write the smallest possible failing test: give input `4,5`. assert output to be `4-5, 2`.
 1. Write the minimum amount of code that'll make it pass.
 1. Refactor any assumptions, continue to pass this test. Do not add any code without a corresponding test.
+
+## Assumptions
+
+1. Input sample list should contain all positive values
+2. Input sample list should not be empty
+
+## Actions
+
+1. Validate the Inputs
+2. If inputs are valid then sort the smaples and intrepret the Ranges
+3. Return the string in csv format
+4. If the inputs are not valid then return 0
