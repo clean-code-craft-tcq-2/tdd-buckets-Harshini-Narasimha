@@ -1,6 +1,15 @@
 #include <algorithm>
 #include "chargingCurrentRangeCreator.h"
 
+bool isChargingCurrentMeasurementListValid(chargingCurrentMeasurementList currentMeasurementList) {
+    for(chargingCurrentMeasurementList::iterator rangeIterator = currentMeasurementList.begin(); rangeIterator != currentMeasurementList.end()-1; rangeIterator++){
+        if(!(*rangeIterator > 0))
+        {
+            return false;
+        }
+        return true;
+    }
+}
 string formatCurrentRangeString(int lowerRange, int upperRange) {
     return (to_string(lowerRange) + "-" + to_string(upperRange));
 }
@@ -34,13 +43,17 @@ currentRangeListWithReadings getRangeWithMultipleReading(chargingCurrentMeasurem
 }
 
 currentRangeListWithReadings getCurrentReadingsFromRanges(chargingCurrentMeasurementList & currentMeasurementList){
+    currentRangeListWithReadings chargingCurrentReadingList;
+    
+    if(isChargingCurrentMeasurementListValid(currentMeasurementList)){
+        return chargingCurrentReadingList;
+    }
     sort(currentMeasurementList.begin(),currentMeasurementList.end());
     
     if(currentMeasurementList.size() == 1) {
        return getRangeWithSingleReading(currentMeasurementList[0]);
     }
-    
-    currentRangeListWithReadings chargingCurrentReadingList;
+  
     if(currentMeasurementList.size() != 0){
         chargingCurrentReadingList=getRangeWithMultipleReading(currentMeasurementList);
     }
