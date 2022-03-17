@@ -8,6 +8,10 @@ TEST_CASE("Check input list validity") {
   REQUIRE(isChargingCurrentMeasurementListValid(chargingCurrentSampleList)==false);
 }
 
+TEST_CASE("Check input list validity") {
+  std::vector<int> chargingCurrentSampleList={1,2,4,7,8,9,1};
+  REQUIRE(isChargingCurrentMeasurementListValid(chargingCurrentSampleList)==true);
+}
 TEST_CASE("Output the number of readings where the current measurements have 2 continuous current charging data") {
   std::vector<int> chargingCurrentSampleList = {4,5};
   std::map<std::string, int> expectedOutputRange = {{"4-5",2}};
