@@ -40,7 +40,7 @@ Range, Readings
 
 Establish quality parameters: 
 
-- What is the maximum complexity (CCN) per function? CCN =3
+- What is the maximum complexity (CCN) per function? CCN =4
 - How many lines of duplicate code will you tolerate? No Duplication beyond 3 lines
 - Ensure 100% line and branch coverage at every step. Include the coverage yml in the workflows.
 
