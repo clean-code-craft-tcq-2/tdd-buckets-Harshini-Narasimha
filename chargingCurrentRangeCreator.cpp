@@ -45,16 +45,11 @@ currentRangeListWithReadings getRangeWithMultipleReading(chargingCurrentMeasurem
 currentRangeListWithReadings getCurrentReadingsFromRanges(chargingCurrentMeasurementList & currentMeasurementList){
     currentRangeListWithReadings chargingCurrentReadingList;
     
-    if(!isChargingCurrentMeasurementListValid(currentMeasurementList)){
-        return chargingCurrentReadingList;
-    }
-    sort(currentMeasurementList.begin(),currentMeasurementList.end());
-    
+    if((isChargingCurrentMeasurementListValid(currentMeasurementList)) && (currentMeasurementList.size() != 0)){
+    sort(currentMeasurementList.begin(),currentMeasurementList.end());    
     if(currentMeasurementList.size() == 1) {
        return getRangeWithSingleReading(currentMeasurementList[0]);
     }
-  
-    if(currentMeasurementList.size() != 0){
         chargingCurrentReadingList=getRangeWithMultipleReading(currentMeasurementList);
     }
     return chargingCurrentReadingList;
