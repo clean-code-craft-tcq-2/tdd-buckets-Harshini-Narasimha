@@ -2,7 +2,7 @@
 #include "chargingCurrentRangeCreator.h"
 
 bool isChargingCurrentMeasurementListValid(chargingCurrentMeasurementList currentMeasurementList) {
-    for(chargingCurrentMeasurementList::iterator rangeIterator = currentMeasurementList.begin(); rangeIterator != currentMeasurementList.end()-1; rangeIterator++){
+    for(chargingCurrentMeasurementList::iterator rangeIterator = currentMeasurementList.begin(); rangeIterator != currentMeasurementList.end(); rangeIterator++){
         if(!(*rangeIterator > 0))
         {
             return false;
