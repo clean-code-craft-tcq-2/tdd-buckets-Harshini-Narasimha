@@ -63,3 +63,14 @@ Start Test-driven approach
 2. If inputs are valid then sort the smaples and intrepret the Ranges
 3. Return the string in csv format
 4. If the inputs are not valid then return 0
+
+##Test cases:
+
+1. Check whether the input list is Valid. Expected Results : should return true if all the values are positive integers. Else return false for invalid data.
+2. Check the formatting of the range in lowerRange-upperRange format. Expected result : Compare the Actual and expected result
+3. Check if range are continuous. Expected result: return true if continuous else false.
+4. Check the data for 2 continuous current charging data.Expected result : Compare the Actual and expected Readings same
+5. Check the sample which is empty. Expected result: Range list empty when no reading available
+6. Check the data with only one input. Expected result : Compare the Actual and expected Readings and the range max and min value should be same
+7. Check the data with multiple readings continuous(current charging data). Expected result : Compare the Actual and expected Readings same
+8. Check the data with multiple readings non-continuous(current charging data). Expected result : Compare the Actual and expected Readings same
