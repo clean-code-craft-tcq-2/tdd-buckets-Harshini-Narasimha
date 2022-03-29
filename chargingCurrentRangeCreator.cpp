@@ -10,7 +10,7 @@ int ConvertA2DToAmps(int ADCValue){
     return convertedAmps;
 }
 
-chargingCurrentMeasurementList getConvertedAmpsList(const chargingCurrentMeasurementList A2D12BitConverterList);
+chargingCurrentMeasurementList getConvertedAmpsList(const chargingCurrentMeasurementList A2D12BitConverterList)
 {
     std::vector convertedAmpsList;
     for(int inputIndex=0; inputIndex < A2D12BitConverterList.size(); inputIndex++)
