@@ -13,7 +13,11 @@ int ConvertA2DToAmps(int ADCValue){
 std::vector<int> getConvertedAmpsList(const std::vector<int> 12BitADCList)
 {
     std::vector convertedAmpsList;
-    return ActualADCValue;
+    for(int inputIndex=0; inputIndex < 12BitADCList.size(); inputIndex++)
+    {
+       convertedAmpsList.push_back(convertA2DToAmps(12BitADCList[inputIndex]));
+    }
+    return convertedAmpsList;
 }
 
 bool isChargingCurrentMeasurementListValid(chargingCurrentMeasurementList currentMeasurementList) {
@@ -57,15 +61,16 @@ currentRangeListWithReadings getRangeWithMultipleReading(chargingCurrentMeasurem
     return chargingCurrentReadingList;
 }
 
-currentRangeListWithReadings getCurrentReadingsFromRanges(chargingCurrentMeasurementList & currentMeasurementList){
+currentRangeListWithReadings getCurrentReadingsFromRanges(const chargingCurrentMeasurementList & currentMeasurementList){
     currentRangeListWithReadings chargingCurrentReadingList;
     
     if((isChargingCurrentMeasurementListValid(currentMeasurementList)) && (currentMeasurementList.size() != 0)){
-    sort(currentMeasurementList.begin(),currentMeasurementList.end());    
-    if(currentMeasurementList.size() == 1) {
-       return getRangeWithSingleReading(currentMeasurementList[0]);
+    chargingCurrentMeasurementList convertedAmpsList=getConvertedAmpsList(currentMeasurementList);
+    sort(convertedAmpsList.begin(),convertedAmpsList.end());    
+    if(convertedAmpsList.size() == 1) {
+       return getRangeWithSingleReading(convertedAmpsList[0]);
     }
-         return getRangeWithMultipleReading(currentMeasurementList);
+         return getRangeWithMultipleReading(convertedAmpsList);
     }
     return chargingCurrentReadingList;
 }
