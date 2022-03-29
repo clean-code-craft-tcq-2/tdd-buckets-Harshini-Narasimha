@@ -56,3 +56,18 @@ TEST_CASE("Check if given values are continuous") {
   REQUIRE(isGivenReadingsContinous(7,10) == false);
   REQUIRE(isGivenReadingsContinous(7,8) == true);
 }
+
+TEST_CASE("Check the conversion of 12-bit value to Amps") {
+  SECTION("Check For 12-bit value 0")
+  {
+    REQUIRE(ConvertA2DToAmps(0) == 0);
+  }
+  SECTION("Check For 12-bit value 4095")
+  {
+    REQUIRE(ConvertA2DToAmps(4095) == 10);
+  }
+  SECTION("Check For 12-bit value 1146")
+  {
+    REQUIRE(ConvertA2DToAmps(1146) == 3);
+  }
+}
