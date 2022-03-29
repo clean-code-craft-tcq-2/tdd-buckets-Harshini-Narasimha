@@ -45,8 +45,8 @@ TEST_CASE("Output the number of readings where the current measurements have mul
 }
 
 TEST_CASE("Get the Reading for list with discontinuous entry") {
-  std::map<std::string, int> expectedOutputRange = {{"7-10",4}};
-  REQUIRE(getRangeWithSingleReading(3400,3000,4094,3500) == expectedOutputRange);
+  std::map<std::string, int> expectedOutputRange = {{"7-7",1}};
+  REQUIRE(getRangeWithSingleReading(7) == expectedOutputRange);
 }
 
 TEST_CASE("Get the Reading for list with multiple entry") {
