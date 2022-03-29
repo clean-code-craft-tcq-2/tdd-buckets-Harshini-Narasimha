@@ -79,3 +79,10 @@ TEST_CASE("Check the conversion of 12-bit value to Amps") {
     REQUIRE(ConvertA2DToAmps(1146) == 3);
   }
 }
+
+TEST_CASE("Check the converetd list from 12-bit value to Amps") {
+  std::vector<int> inputList={1546,3000,4092};
+  std::vector<int> convertedList=getConvertedAmpsList(inputList)
+  std::vector<int> expectedList={4,7,10};
+  REQUIRE(convertedList == expectedList);
+}
