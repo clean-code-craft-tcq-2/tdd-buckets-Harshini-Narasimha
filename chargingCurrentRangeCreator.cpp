@@ -5,7 +5,7 @@
 #define MAXIMUM_12_BIT_VALUE 4094
 #define MAXIMUM_CUURENT_VALUE 10
 
-int ConvertA2DToAmps(int ADCValue){
+int convertA2DToAmps(int ADCValue){
     int convertedAmps=round((((float)MAXIMUM_CUURENT_VALUE* (float)ADCValue) / (float)MAXIMUM_12_BIT_VALUE));
     return convertedAmps;
 }
