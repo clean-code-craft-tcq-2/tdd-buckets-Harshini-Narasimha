@@ -4,8 +4,16 @@
 #include "chargingCurrentRangeCreator.h"
 
 TEST_CASE("Check input list validity where one of the data is invalid") {
-  std::vector<int> chargingCurrentSampleList={1,2,-4,7,8};
-  REQUIRE(isChargingCurrentMeasurementListValid(chargingCurrentSampleList)==false);
+  SECTION("Check For input validity where one of the value is negative")
+  {
+     std::vector<int> chargingCurrentSampleList={100,200,-4,700,800};
+     REQUIRE(isChargingCurrentMeasurementListValid(chargingCurrentSampleList)==false);
+  }
+  SECTION("Check For input validity where one of the value is greater than 4095 (more than 12-bit)")
+  {
+     std::vector<int> chargingCurrentSampleList={1067,2,4099,789,800};
+     REQUIRE(isChargingCurrentMeasurementListValid(chargingCurrentSampleList)==false);
+  }
 }
 
 TEST_CASE("Check input list validity") {
