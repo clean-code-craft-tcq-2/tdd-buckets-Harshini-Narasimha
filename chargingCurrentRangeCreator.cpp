@@ -1,5 +1,6 @@
 #include <algorithm>
 #include "chargingCurrentRangeCreator.h"
+#include <math.h>
 
 #define MAXIMUM_12_BIT_VALUE 4094
 #define MAXIMUM_CUURENT_VALUE 10
