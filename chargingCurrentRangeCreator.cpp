@@ -1,6 +1,11 @@
 #include <algorithm>
 #include "chargingCurrentRangeCreator.h"
 
+int ConvertA2DToAmps(int ADCValue){
+    int convertedAmps=0;
+    return convertedAmps;
+}
+
 bool isChargingCurrentMeasurementListValid(chargingCurrentMeasurementList currentMeasurementList) {
     for(chargingCurrentMeasurementList::iterator rangeIterator = currentMeasurementList.begin(); rangeIterator != currentMeasurementList.end(); rangeIterator++){
         if(!(*rangeIterator > 0))
