@@ -10,6 +10,11 @@ int ConvertA2DToAmps(int ADCValue){
     return convertedAmps;
 }
 
+currentRangeListWithReadings getRangeWithSingleReading(int chargingCurrentValue){
+    currentRangeListWithReadings currentRangeList;
+    return currentRangeList;
+}
+
 bool isChargingCurrentMeasurementListValid(chargingCurrentMeasurementList currentMeasurementList) {
     for(chargingCurrentMeasurementList::iterator rangeIterator = currentMeasurementList.begin(); rangeIterator != currentMeasurementList.end(); rangeIterator++){
         if((*rangeIterator < 0) || (*rangeIterator>MAXIMUM_12_BIT_VALUE))
