@@ -12,4 +12,4 @@ currentRangeListWithReadings getRangeWithSingleReading(int chargingCurrentValue)
 currentRangeListWithReadings getRangeWithMultipleReading(chargingCurrentMeasurementList currentMeasurementList);
 currentRangeListWithReadings getCurrentReadingsFromRanges(chargingCurrentMeasurementList & currentMeasurementList);
 bool isChargingCurrentMeasurementListValid(chargingCurrentMeasurementList currentMeasurementList);
-int ConvertA2DToAmp(int ADCValue);
+int ConvertA2DToAmps(int ADCValue);
