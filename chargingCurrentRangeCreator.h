@@ -12,5 +12,5 @@ currentRangeListWithReadings getRangeWithSingleReading(int chargingCurrentValue)
 currentRangeListWithReadings getRangeWithMultipleReading(chargingCurrentMeasurementList currentMeasurementList);
 currentRangeListWithReadings getCurrentReadingsFromRanges(const chargingCurrentMeasurementList & currentMeasurementList);
 bool isChargingCurrentMeasurementListValid(chargingCurrentMeasurementList currentMeasurementList);
-int ConvertA2DToAmps(int ADCValue);
+int convertA2DToAmps(int ADCValue);
 chargingCurrentMeasurementList getConvertedAmpsList(const chargingCurrentMeasurementList A2D12BitConverterList);
