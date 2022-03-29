@@ -10,9 +10,10 @@ int ConvertA2DToAmps(int ADCValue){
     return convertedAmps;
 }
 
-currentRangeListWithReadings getRangeWithSingleReading(int chargingCurrentValue){
-    currentRangeListWithReadings currentRangeList;
-    return currentRangeList;
+std::vector<int> getConvertedAmpsList(const std::vector<int> 12BitADCList)
+{
+    std::vector convertedAmpsList;
+    return ActualADCValue;
 }
 
 bool isChargingCurrentMeasurementListValid(chargingCurrentMeasurementList currentMeasurementList) {
