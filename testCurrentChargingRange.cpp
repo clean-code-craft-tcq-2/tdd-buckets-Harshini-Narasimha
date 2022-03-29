@@ -11,8 +11,8 @@ TEST_CASE("Check input list validity where one of the data is invalid") {
   }
   SECTION("Check For input validity where one of the value is greater than 4094")
   {
-     std::vector<int> chargingCurrentSampleList={1067,2,4099,789,800};
-     REQUIRE(isChargingCurrentMeasurementListValid(chargingCurrentSampleList)==false);
+     std::vector<int> chargingCurrentSamples={1067,2,4099,789,800};
+     REQUIRE(isChargingCurrentMeasurementListValid(chargingCurrentSamples)==false);
   }
 }
 
