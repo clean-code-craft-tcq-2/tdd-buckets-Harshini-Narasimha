@@ -21,7 +21,7 @@ TEST_CASE("Check input list validity where one of the data is invalid") {
 }
 
 TEST_CASE("Output the number of readings where the current measurements have 2 continuous current charging data") {
-  std::vector<int> chargingCurrentSampleList = {4,5};
+  std::vector<int> chargingCurrentSampleList = {1500,2000};
   std::map<std::string, int> expectedOutputRange = {{"4-5",2}};
   REQUIRE(getCurrentReadingsFromRanges(chargingCurrentSampleList) == expectedOutputRange);
 }
