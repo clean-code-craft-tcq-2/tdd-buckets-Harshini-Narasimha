@@ -13,9 +13,9 @@ int ConvertA2DToAmps(int ADCValue){
 chargingCurrentMeasurementList getConvertedAmpsList(const chargingCurrentMeasurementList A2D12BitConverterList);
 {
     std::vector convertedAmpsList;
-    for(int inputIndex=0; inputIndex < 12BitADCList.size(); inputIndex++)
+    for(int inputIndex=0; inputIndex < A2D12BitConverterList.size(); inputIndex++)
     {
-       convertedAmpsList.push_back(convertA2DToAmps(12BitADCList[inputIndex]));
+       convertedAmpsList.push_back(convertA2DToAmps(A2D12BitConverterList[inputIndex]));
     }
     return convertedAmpsList;
 }
