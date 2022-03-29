@@ -3,6 +3,10 @@
 #include "test/catch.hpp"
 #include "chargingCurrentRangeCreator.h"
 
+TEST_CASE("Check input list validity where input list is valid") {
+  std::vector<int> chargingCurrentSampleList={100,200,700,800};
+     REQUIRE(isChargingCurrentMeasurementListValid(chargingCurrentSampleList)==true);
+}
 TEST_CASE("Check input list validity where one of the data is invalid") {
   SECTION("Check For input validity where one of the value is negative")
   {
@@ -24,8 +28,7 @@ TEST_CASE("Output the number of readings where the current measurements have 2 c
 
 TEST_CASE("Range list empty when no reading available") {
   std::vector<int> emptyChargingCurrentSampleList;
-  std::map<std::string, int> expectedEmptyOutputRange;
-  REQUIRE(getCurrentReadingsFromRanges(emptyChargingCurrentSampleList) == expectedEmptyOutputRange);
+  REQUIRE(getCurrentReadingsFromRanges(emptyChargingCurrentSampleList).size() == 0);
 }
 
 TEST_CASE("Output the number of readings where the current measurements have 1 current charging data") {
