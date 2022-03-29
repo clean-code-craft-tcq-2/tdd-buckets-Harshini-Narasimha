@@ -13,4 +13,4 @@ currentRangeListWithReadings getRangeWithMultipleReading(chargingCurrentMeasurem
 currentRangeListWithReadings getCurrentReadingsFromRanges(const chargingCurrentMeasurementList & currentMeasurementList);
 bool isChargingCurrentMeasurementListValid(chargingCurrentMeasurementList currentMeasurementList);
 int ConvertA2DToAmps(int ADCValue);
-std::vector<int> getConvertedAmpsList(const std::vector<int> 12BitADCList);
+chargingCurrentMeasurementList getConvertedAmpsList(const chargingCurrentMeasurementList A2D12BitConverterList);
