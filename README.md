@@ -54,19 +54,21 @@ Start Test-driven approach
 
 ## Assumptions
 
-1. Input sample list should contain all positive values
-2. Input sample list should not be empty
+1. Input sample list should contain all positive values(<=4095)
+2. Considering the 12-bit A2D converter, minimum value is 0 and max value is 4094.
+3. Input sample list should not be empty
 
 ## Actions
 
 1. Validate the Inputs
-2. If inputs are valid then sort the smaples and intrepret the Ranges
-3. Return the string in csv format
-4. If the inputs are not valid then return 0
+2. Convert the 12-bit A2D converter to amphers. (10 Amps * 12-bit value / 4094).
+3. If inputs are valid then sort the smaples and intrepret the Ranges
+4. Return the string in csv format
+5. If the inputs are not valid then return 0
 
 ## Test cases:
 
-1. Check whether the input list is Valid. Expected Results : should return true if all the values are positive integers. Else return false for invalid data.
+1. Check whether the input list is Valid. Expected Results : should return true if all the values are 0>=values<=4095. Else return false for invalid data.
 2. Check the formatting of the range in lowerRange-upperRange format. Expected result : Compare the Actual and expected result
 3. Check if range are continuous. Expected result: return true if continuous else false.
 4. Check the data for 2 continuous current charging data.Expected result : Compare the Actual and expected Readings same
@@ -74,3 +76,4 @@ Start Test-driven approach
 6. Check the data with only one input. Expected result : Compare the Actual and expected Readings and the range max and min value should be same
 7. Check the data with multiple readings continuous(current charging data). Expected result : Compare the Actual and expected Readings same
 8. Check the data with multiple readings non-continuous(current charging data). Expected result : Compare the Actual and expected Readings same
+9. Check the convertion of 12-bit value to amphere. Expected value: 0 when input is 0, 10 when input is 4094. (10 Amps * 12-bit value / 4094)
