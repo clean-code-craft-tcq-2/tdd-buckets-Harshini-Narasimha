@@ -1,8 +1,11 @@
 #include <algorithm>
 #include "chargingCurrentRangeCreator.h"
 
+#define MAXIMUM_12_BIT_VALUE 4094
+#define MAXIMUM_CUURENT_VALUE 10
+
 int ConvertA2DToAmps(int ADCValue){
-    int convertedAmps=0;
+    int convertedAmps=round((((float)MAXIMUM_CUURENT_VALUE* (float)ADCValue) / (float)MAXIMUM_12_BIT_VALUE));
     return convertedAmps;
 }
 
